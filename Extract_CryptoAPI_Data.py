@@ -24,11 +24,11 @@ if response.status_code == 200:
 else:
     print(f"Error: {response.status_code} - {response.text}")
 
+#Normalizing the data uisng json_normalize function
 df = pandas.json_normalize(response_data,'data')
 print(df)
 
-#Create a connection with Database suing SQLAlchemy
-
+#Create a connection with Database using SQLAlchemy
 engine = sqlalchemy.create_engine('mysql+mysqlconnector://root:shreya@localhost:3306/crypto')
 
 df.to_sql(name='factcrypto', con=engine, index=True, if_exists='replace')
