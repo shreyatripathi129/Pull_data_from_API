@@ -1,5 +1,6 @@
 # Extracting data from an API and loading it to Mysql Uisng python
 
+#importing all the required libraries
 import requests
 import pandas
 import sqlalchemy
@@ -28,8 +29,9 @@ else:
 df = pandas.json_normalize(response_data,'data')
 print(df)
 
-#Create a connection with Database using SQLAlchemy
+#Create a connection with MySQL Database using SQLAlchemy
 engine = sqlalchemy.create_engine('mysql+mysqlconnector://root:shreya@localhost:3306/crypto')
 
+#Write the contents of a DataFrame to a MySQL database table
 df.to_sql(name='factcrypto', con=engine, index=True, if_exists='replace')
 
