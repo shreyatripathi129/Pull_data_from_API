@@ -2,6 +2,8 @@
 
 # Extracting the data from Crypto-Currency API and loading it in Mysql Database Using Python 
 
+![](https://github.com/shreyatripathi129/Pull_data_from_API/blob/main/image.png)
+
 ## Modules/Libraries Used
 
 This project uses the following Python modules:
